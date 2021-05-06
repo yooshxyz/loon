@@ -26,7 +26,7 @@ def spaces_available(board):
     space_collection = []
     for Key in board:
         if board[Key] != None:
-            filled_value = str(board.keys())
+            filled_value = str(board[Key])
             space_collection.append(filled_value)
         else:
             pass
