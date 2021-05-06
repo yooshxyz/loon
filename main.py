@@ -13,23 +13,30 @@ board = {
 }
 
 
-
-
-class gameBoard:
-    def __init__(self, available_spaces):
-        self.spaces_not_available = int(available_spaces)
-    def find_available_spaces(self, board, SA):
-        for Key in board:
-            if board[Key] == None:
-                available_spaces += 1
-            else:
-                pass
-
-def main(gameBoard):
+def find_available_spaces(board):
     available_spaces = 0
-    currentBoard = gameBoard(available_spaces)
-    currentBoard.find_available_spaces(board, available_spaces)
-    print(currentBoard.spaces_not_available)
-    print(available_spaces)
+    for Key in board:
+        if board[Key] == None:
+            available_spaces += 1
+        else:
+            pass
+    return available_spaces
 
-main(gameBoard)
+def spaces_available(board):
+    space_collection = []
+    for Key in board:
+        if board[Key] != None:
+            filled_value = str(board.keys())
+            space_collection.append(filled_value)
+        else:
+            pass
+    return space_collection
+
+
+def main():
+    spaces_left = find_available_spaces(board)
+    print(spaces_left)
+    empty_spaces = spaces_available(board)
+    print(empty_spaces)
+
+main()
